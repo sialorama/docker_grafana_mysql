@@ -1,7 +1,3 @@
-# docker_grafana_mysql
-Un conteneur pour Grafana - COVID-19 World Vaccination Progress 
-
-
 {
  "cells": [
   {
