@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  # simple myself setup
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: vaccin
+      MYSQL_USER: user
+      MYSQL_PASSWORD: admin
+
+  # grafana used for graphing mysql data
+  grafana:
+    image: grafana/grafana
+    ports:
+      - '80:3000'
+    environment:
+      GF_INSTALL_PLUGINS: percona-percona-app
