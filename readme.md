@@ -45,8 +45,11 @@ docker exec -it mysql_server bash
 docker exec -it mysql_server mysql -u root -p
 #mot de passe : admin
 ##### Copier le fichier sql à la racine du container mysql_server:
+
 powershell:> docker cp c:/ia/vaccination/vaccination.sql mysql_server:/
+
 ##### Charger le fichier vaccination.sql dans le container mysql_server créé :
+
 source vaccination.sqlEtape 1 : docker exec -it mysql_server bin/bash
 Etape 2 : mysql -u root -p
     >>>
@@ -93,8 +96,13 @@ source notre_DB.sql
 ##### Afficher le port qu'utilise mysql : 
 SHOW VARIABLES LIKE 'port';
 ## Lancer Grafana
-lancer grafana dans le navigateur : localhost:3000/login
-id : admin et mot de passe : admin par défaut.docker run -d --name mysql_server --network mynet -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin mysql:5.7docker run -d --name grafana --network mynet -p 3000:3000 -v grafana_config:/etc/grafana grafana/grafana
+lancer grafana dans le navigateur : 
+localhost:3000/login
+
+id : admin et mot de passe : admin par défaut.
+
+docker run -d --name mysql_server --network mynet -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin mysql:5.7docker run -d --name grafana --network mynet -p 3000:3000 -v grafana_config:/etc/grafana grafana/grafana
+
 #### Etape 2 : Mettre le .sql dans le container
 powershell:> docker cp c:/ia/vaccination/vaccination.sql mysql_server:/ #pour le mettre à la racine
 #### Snapshot du graphic
